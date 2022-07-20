@@ -31,10 +31,10 @@ connection = psycopg2.connect(user="postgres",
                             password="12344321",
                             host="10.32.141.17",
                             port="5432",
-                            database="googleplay")
+                            database="googleplay1")
 cursor = connection.cursor()
 #########   googleplay
-googleplay = psql.read_sql('select * from public."googleplay_meta2022041822"', connection)
+googleplay = psql.read_sql('select * from public."googleplay_meta"', connection)
 print(len(googleplay))
 
 
@@ -44,8 +44,10 @@ googleplay['creator'] = ''
 googleplay['OS'] = 'Android'
 googleplay['age range']=''
 googleplay['Cost']=''
+googleplay['Updated']=googleplay['Last Update']
+googleplay['Installs']=googleplay['Download']
 
-googleplay = googleplay[['cat','categori_name','content_name','content_link','rate','ratings','Updated','Size','Installs','Current Version','crawling_date','age range','Cost','creator','OS','platform']]
+googleplay = googleplay[['cat','categori_name','content_name','content_link','rate','ratings','Updated','Size','Installs','Current Version','crawling_date','age range','Cost','creator','OS','platform','Device cat']]
 
 # googleplay.to_excel(r'D:\python\PowerBI_App_store\progress\test\googleplay1.xlsx', index=False)
 
@@ -67,7 +69,7 @@ connection = psycopg2.connect(user="postgres",
 cursor = connection.cursor()
 
 
-cafebazar = psql.read_sql('select * from public."cafebazar_meta2022042908"', connection)
+cafebazar = psql.read_sql('select * from public."cafebazar_meta"', connection)
 
 cafebazar.dtypes
 print("cafebazar:" ,len(cafebazar))
@@ -78,11 +80,12 @@ cafebazar['platform'] = 'cafebazar'
 cafebazar['OS'] = 'Android'
 cafebazar['creator'] = ''
 cafebazar['Updated'] = ''
+cafebazar['Device cat'] = ''
 
 cafebazar['age range']=''
 cafebazar['Cost']=''
 
-cafebazar = cafebazar[['cat','categori_name','content_name','content_link','rate','ratings','Updated','Size','Installs','Current Version','crawling_date','age range','Cost','creator','OS','platform']]
+cafebazar = cafebazar[['cat','categori_name','content_name','content_link','rate','ratings','Updated','Size','Installs','Current Version','crawling_date','age range','Cost','creator','OS','platform','Device cat']]
 
 # cafebazar.to_excel(r'D:\python\PowerBI_App_store\progress\test\cafebazar1.xlsx', index=False)
 
@@ -99,7 +102,7 @@ connection = psycopg2.connect(user="postgres",
 cursor = connection.cursor()
 
 
-myket = psql.read_sql('select * from public."myket_meta2022042007"', connection)
+myket = psql.read_sql('select * from public."myket_meta"', connection)
 print('myket:',len(myket))
 print('فراخونی محتوای myket')
 # gabeh_1000 = gabeh[1:1000]
@@ -111,10 +114,11 @@ myket['Updated'] = myket['Last Update']
 
 myket['age range']=''
 myket['Cost']=''
+myket['Device cat']=''
 
 myket.dtypes
 
-myket = myket[['cat','categori_name','content_name','content_link','rate','ratings','Updated','Size','Installs','Current Version','crawling_date','age range','Cost','creator','OS','platform']]
+myket = myket[['cat','categori_name','content_name','content_link','rate','ratings','Updated','Size','Installs','Current Version','crawling_date','age range','Cost','creator','OS','platform','Device cat']]
 
 
 # myket.to_excel(r'D:\python\PowerBI_App_store\progress\test\myket1.xlsx', index=False)
@@ -132,7 +136,7 @@ connection = psycopg2.connect(user="postgres",
                             database="anardoni")
 cursor = connection.cursor()
 
-anardoni = psql.read_sql('select * from public."anardoni_meta2022051615"', connection)
+anardoni = psql.read_sql('select * from public."anardoni_meta"', connection)
 print('anardoni:',len(anardoni))
 print('فراخونی محتوای anardoni')
 
@@ -143,14 +147,14 @@ anardoni['creator'] = anardoni['Creator']
 anardoni['platform'] = 'anardoni'
 anardoni['OS'] = 'IOS'
 
-# anardoni['age range']=
+anardoni['Device cat']=''
 # anardoni['Cost']=
 
 anardoni['rate'] = anardoni['rate'].astype(str).astype(float)
 anardoni['ratings'] = anardoni['ratings'].astype(str).astype(int)
 anardoni['Installs'] = anardoni['Installs'].astype(str).astype(int)
 
-anardoni = anardoni[['cat','categori_name','content_name','content_link','rate','ratings','Updated','Size','Installs','Current Version','crawling_date','age range','Cost','creator','OS','platform']]
+anardoni = anardoni[['cat','categori_name','content_name','content_link','rate','ratings','Updated','Size','Installs','Current Version','crawling_date','age range','Cost','creator','OS','platform','Device cat']]
 
 
 # anardoni.to_excel(r'D:\python\PowerBI_App_store\progress\test\anardoni1.xlsx', index=False)
@@ -169,7 +173,7 @@ connection = psycopg2.connect(user="postgres",
                             database="nassaab")
 cursor = connection.cursor()
 
-nassaab = psql.read_sql('select * from public."nassaab_meta2022051414"', connection)
+nassaab = psql.read_sql('select * from public."nassaab_meta"', connection)
 print('nassaab:',len(nassaab))
 print('فراخونی محتوای nassaab')
 nassaab['platform'] = 'nassaab'
@@ -180,12 +184,13 @@ nassaab['creator'] = nassaab['Creator']
 nassaab['age range']=''
 nassaab['Cost']=''
 nassaab['OS'] = 'IOS'
+nassaab['Device cat']=''
 
 nassaab.dtypes
 
 nassaab['Installs'] = nassaab['Installs'].astype(str).astype(int)
 
-nassaab = nassaab[['cat','categori_name','content_name','content_link','rate','ratings','Updated','Size','Installs','Current Version','crawling_date','age range','Cost','creator','OS','platform']]
+nassaab = nassaab[['cat','categori_name','content_name','content_link','rate','ratings','Updated','Size','Installs','Current Version','crawling_date','age range','Cost','creator','OS','platform','Device cat']]
 # nassaab.to_excel(r'D:\python\PowerBI_App_store\progress\test\nassaab1.xlsx', index=False)
 
 print('nassaab:', len(nassaab))
@@ -204,7 +209,7 @@ connection = psycopg2.connect(user="postgres",
                             database="sibapp")
 cursor = connection.cursor()
 
-sibapp = psql.read_sql('select * from public."sibapp_meta2022050213"', connection)
+sibapp = psql.read_sql('select * from public."sibapp_meta"', connection)
 print('sibapp :',len(sibapp))
 print('فراخونی محتوای sibapp')
 
@@ -217,9 +222,10 @@ sibapp['creator'] = ''
 sibapp['age range']=''
 sibapp['Cost']=''
 sibapp['OS'] = 'IOS'
+sibapp['Device cat'] = ''
 sibapp.dtypes
 
-sibapp = sibapp[['cat','categori_name','content_name','content_link','rate','ratings','Updated','Size','Installs','Current Version','crawling_date','age range','Cost','creator','OS','platform']]
+sibapp = sibapp[['cat','categori_name','content_name','content_link','rate','ratings','Updated','Size','Installs','Current Version','crawling_date','age range','Cost','creator','OS','platform','Device cat']]
 # sibapp.to_excel(r'D:\python\PowerBI_App_store\progress\test\sibapp.xlsx', index=False)
 
 
@@ -237,19 +243,20 @@ connection = psycopg2.connect(user="postgres",
                             database="sibche")
 cursor = connection.cursor()
 
-sibche = psql.read_sql('select * from public."sibche_meta2022051507"', connection)
+sibche = psql.read_sql('select * from public."sibche_meta"', connection)
 print('sibche:',len(sibche))
 print('فراخونی محتوای sibche')
 
 sibche['platform'] = 'sibche'
 sibche['Updated'] = ''
 sibche['OS'] = 'IOS'
+sibche['Device cat'] = ''
 sibche.dtypes
 
 # sibche['age range']=''
 sibche['Cost']=''
 
-sibche = sibche[['cat','categori_name','content_name','content_link','rate','ratings','Updated','Size','Installs','Current Version','crawling_date','age range','Cost','creator','OS','platform']]
+sibche = sibche[['cat','categori_name','content_name','content_link','rate','ratings','Updated','Size','Installs','Current Version','crawling_date','age range','Cost','creator','OS','platform','Device cat']]
 
 
 
@@ -269,7 +276,7 @@ adgham_app['Installs'] = adgham_app['Installs'].astype(int)
 
 adgham_app.dtypes
 
-sibche = sibche[['cat','categori_name','content_name','content_link','rate','ratings','Updated','Size','Installs','Current Version','crawling_date','age range','Cost','creator','OS','platform']]
+sibche = sibche[['cat','categori_name','content_name','content_link','rate','ratings','Updated','Size','Installs','Current Version','crawling_date','age range','Cost','creator','OS','platform','Device cat']]
 
 
 # adgham0['viwes'] = adgham0['viwes'].astype(float)
