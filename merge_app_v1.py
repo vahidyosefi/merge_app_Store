@@ -44,8 +44,9 @@ googleplay['creator'] = ''
 googleplay['OS'] = 'Android'
 googleplay['age range']=''
 googleplay['Cost']=''
+googleplay['Device cat']=''
 
-googleplay = googleplay[['cat','categori_name','content_name','content_link','rate','ratings','Updated','Size','Installs','Current Version','crawling_date','age range','Cost','creator','OS','platform']]
+googleplay = googleplay[['cat','categori_name','content_name','content_link','rate','ratings','Updated','Size','Installs','Current Version','crawling_date','age range','Cost','creator','OS','platform','Device cat']]
 
 # googleplay.to_excel(r'D:\python\PowerBI_App_store\progress\test\googleplay1.xlsx', index=False)
 
@@ -81,8 +82,9 @@ cafebazar['Updated'] = ''
 
 cafebazar['age range']=''
 cafebazar['Cost']=''
+cafebazar['Device cat']=''
 
-cafebazar = cafebazar[['cat','categori_name','content_name','content_link','rate','ratings','Updated','Size','Installs','Current Version','crawling_date','age range','Cost','creator','OS','platform']]
+cafebazar = cafebazar[['cat','categori_name','content_name','content_link','rate','ratings','Updated','Size','Installs','Current Version','crawling_date','age range','Cost','creator','OS','platform','Device cat']]
 
 # cafebazar.to_excel(r'D:\python\PowerBI_App_store\progress\test\cafebazar1.xlsx', index=False)
 
@@ -111,10 +113,11 @@ myket['Updated'] = myket['Last Update']
 
 myket['age range']=''
 myket['Cost']=''
+myket['Device cat']=''
 
 myket.dtypes
 
-myket = myket[['cat','categori_name','content_name','content_link','rate','ratings','Updated','Size','Installs','Current Version','crawling_date','age range','Cost','creator','OS','platform']]
+myket = myket[['cat','categori_name','content_name','content_link','rate','ratings','Updated','Size','Installs','Current Version','crawling_date','age range','Cost','creator','OS','platform','Device cat']]
 
 
 # myket.to_excel(r'D:\python\PowerBI_App_store\progress\test\myket1.xlsx', index=False)
@@ -142,6 +145,7 @@ anardoni['creator'] = anardoni['Creator']
 
 anardoni['platform'] = 'anardoni'
 anardoni['OS'] = 'IOS'
+anardoni['Device cat'] = ''
 
 # anardoni['age range']=
 # anardoni['Cost']=
@@ -150,7 +154,7 @@ anardoni['rate'] = anardoni['rate'].astype(str).astype(float)
 anardoni['ratings'] = anardoni['ratings'].astype(str).astype(int)
 anardoni['Installs'] = anardoni['Installs'].astype(str).astype(int)
 
-anardoni = anardoni[['cat','categori_name','content_name','content_link','rate','ratings','Updated','Size','Installs','Current Version','crawling_date','age range','Cost','creator','OS','platform']]
+anardoni = anardoni[['cat','categori_name','content_name','content_link','rate','ratings','Updated','Size','Installs','Current Version','crawling_date','age range','Cost','creator','OS','platform','Device cat']]
 
 
 # anardoni.to_excel(r'D:\python\PowerBI_App_store\progress\test\anardoni1.xlsx', index=False)
@@ -180,12 +184,13 @@ nassaab['creator'] = nassaab['Creator']
 nassaab['age range']=''
 nassaab['Cost']=''
 nassaab['OS'] = 'IOS'
+nassaab['Device cat']=''
 
 nassaab.dtypes
 
 nassaab['Installs'] = nassaab['Installs'].astype(str).astype(int)
 
-nassaab = nassaab[['cat','categori_name','content_name','content_link','rate','ratings','Updated','Size','Installs','Current Version','crawling_date','age range','Cost','creator','OS','platform']]
+nassaab = nassaab[['cat','categori_name','content_name','content_link','rate','ratings','Updated','Size','Installs','Current Version','crawling_date','age range','Cost','creator','OS','platform','Device cat']]
 # nassaab.to_excel(r'D:\python\PowerBI_App_store\progress\test\nassaab1.xlsx', index=False)
 
 print('nassaab:', len(nassaab))
@@ -218,8 +223,9 @@ sibapp['age range']=''
 sibapp['Cost']=''
 sibapp['OS'] = 'IOS'
 sibapp.dtypes
+sibapp['Device cat']=''
 
-sibapp = sibapp[['cat','categori_name','content_name','content_link','rate','ratings','Updated','Size','Installs','Current Version','crawling_date','age range','Cost','creator','OS','platform']]
+sibapp = sibapp[['cat','categori_name','content_name','content_link','rate','ratings','Updated','Size','Installs','Current Version','crawling_date','age range','Cost','creator','OS','platform','Device cat']]
 # sibapp.to_excel(r'D:\python\PowerBI_App_store\progress\test\sibapp.xlsx', index=False)
 
 
@@ -248,8 +254,10 @@ sibche.dtypes
 
 # sibche['age range']=''
 sibche['Cost']=''
+sibche['Device cat']=''
 
-sibche = sibche[['cat','categori_name','content_name','content_link','rate','ratings','Updated','Size','Installs','Current Version','crawling_date','age range','Cost','creator','OS','platform']]
+
+sibche = sibche[['cat','categori_name','content_name','content_link','rate','ratings','Updated','Size','Installs','Current Version','crawling_date','age range','Cost','creator','OS','platform','Device cat']]
 
 
 
@@ -269,7 +277,7 @@ adgham_app['Installs'] = adgham_app['Installs'].astype(int)
 
 adgham_app.dtypes
 
-sibche = sibche[['cat','categori_name','content_name','content_link','rate','ratings','Updated','Size','Installs','Current Version','crawling_date','age range','Cost','creator','OS','platform']]
+sibche = sibche[['cat','categori_name','content_name','content_link','rate','ratings','Updated','Size','Installs','Current Version','crawling_date','age range','Cost','creator','OS','platform','Device cat']]
 
 
 # adgham0['viwes'] = adgham0['viwes'].astype(float)

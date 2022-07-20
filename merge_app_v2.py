@@ -209,7 +209,7 @@ connection = psycopg2.connect(user="postgres",
                             database="sibapp")
 cursor = connection.cursor()
 
-sibapp = psql.read_sql('select * from public."sibapp_meta"', connection)
+sibapp = psql.read_sql('select * from public."sibapp_meta0"', connection)
 print('sibapp :',len(sibapp))
 print('فراخونی محتوای sibapp')
 
@@ -330,9 +330,9 @@ adgham_app['categori_name'] = adgham_app['categori_name'].str.replace('آموز�
 # adgham_app['categori_name'] = adgham_app['categori_name'].str.replace('','')
 
 
-adgham_app.to_excel(r'D:\python\PowerBI_App_store\progress\test\adgham_app4.xlsx', index=False)
+# adgham_app.to_excel(r'D:\python\PowerBI_App_store\progress\test\adgham_app4.xlsx', index=False)
 print('adgham_app :',len(adgham_app))
-adgham_app.to_sql('App_merge',con,if_exists='replace', index=False)
+adgham_app.to_sql('App_merge',con,if_exists='append', index=False)
 
 print('اتمام برنامه')
 
@@ -341,14 +341,14 @@ adgham_app.dtypes
 creator = adgham_app.query(" creator != ''")
 print('just_creator_v1 :',len(creator))
 creator.to_excel(r'D:\python\PowerBI_App_store\progress\test\creator.xlsx', index=False)
-creator.to_sql('creator_App_merge',con,if_exists='replace', index=False)
+creator.to_sql('creator_App_merge',con,if_exists='append', index=False)
 
 
 
 cat = adgham_app.query(" cat == 'game'")
 print('just_cat :',len(cat))
 cat.to_excel(r'D:\python\PowerBI_App_store\progress\test\cat.xlsx', index=False)
-cat.to_sql('game_App_merge',con,if_exists='replace', index=False)
+cat.to_sql('game_App_merge',con,if_exists='append', index=False)
 
 
 
@@ -372,6 +372,6 @@ learn = pd.concat(learn0)
 
 print('learn :',len(learn))
 learn.to_excel(r'D:\python\PowerBI_App_store\progress\test\learn2.xlsx', index=False)
-learn.to_sql('learn_app',con,if_exists='replace', index=False)
+learn.to_sql('learn_app',con,if_exists='append', index=False)
 
 
